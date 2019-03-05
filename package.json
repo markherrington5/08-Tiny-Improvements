@@ -1,0 +1,24 @@
+{
+  "name": "08-tiny-improvements",
+  "version": "1.0.0",
+  "description": "### Overview",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markherrington5/08-Tiny-Improvements.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markherrington5/08-Tiny-Improvements/issues"
+  },
+  "homepage": "https://github.com/markherrington5/08-Tiny-Improvements#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.17"
+  }
+}
