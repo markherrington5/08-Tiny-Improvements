@@ -7,11 +7,11 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static('public'));
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/improvements';
 
-mongoose.connect('mongodb://localhost/tiny-improvements-3-4', { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 require('./routes/api-routes')(app);
 

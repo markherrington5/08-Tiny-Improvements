@@ -1,9 +1,9 @@
 const User = require('../models/user');
-const Kude = require('../models/kudo');
+const Kudo = require('../models/kudo');
 
 module.exports = function (app) {
     // grabs kudos and populates the to and from properties from the user collection
-    app.get('api/kudo', function (req, res) {
+    app.get('/api/kudo', function (req, res) {
         Kudo.find({})
             .populate('to')
             .populate('from')
@@ -15,7 +15,7 @@ module.exports = function (app) {
     });
 
     // retrieves all users from the users collection
-    app.get('api/user', function (req, res) {
+    app.get('/api/user', function (req, res) {
         User.find({}).then(function (data) {
             res.json(data);
         }).catch(function (err) {
@@ -24,7 +24,7 @@ module.exports = function (app) {
     });
 
     // adds a new kudo to kudos collection
-    app.post('api/kudo', function (req, res) {
+    app.post('/api/kudo', function (req, res) {
         const newKudo = {
             title: req.body.title,
             body: req.body.body,
