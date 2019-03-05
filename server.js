@@ -11,9 +11,9 @@ app.use(express.static(path.join(__dirname, './public')));
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/improvements';
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/tiny-improvements-3-4', { useNewUrlParser: true });
 
-// require('./routes/api-routes')(app);
+require('./routes/api-routes')(app);
 
 app.listen(PORT, function () {
     console.log(`APP IS NOW LISTENING ON PORT: ${PORT}.`);
