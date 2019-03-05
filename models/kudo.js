@@ -1,4 +1,4 @@
-const mongoose = reqire('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let KudoSchema = new Schema({
@@ -20,4 +20,4 @@ let KudoSchema = new Schema({
 
 const Kudo = mongoose.model('Kudo', KudoSchema);
 
-module.exports = Ksudo;
+module.exports = Kudo;
