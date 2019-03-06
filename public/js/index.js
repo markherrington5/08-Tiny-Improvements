@@ -5,6 +5,7 @@ $(function() {
         $('#kudos').empty();
         // append each item to kudos div
         for (let i = 0; i < dataList.length; i++) {
+            console.log(dataList)
             $('#kudos').append(
                 `<div class='card'>
                     <h5>${dataList[i].title}</h5>
@@ -54,8 +55,9 @@ $(function() {
             }
 
             console.log(kudo);
+            // post isn't posting all the elements of kudo???
     
-            $.post('api/kudo', kudo).then(function(data) {
+            $.post('/api/kudo', kudo).then(function() {
                 $('#kudo-title').val('');
                 $('#kudo-body').val('');
                 $('#kudo-from').val('');

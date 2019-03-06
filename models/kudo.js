@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let KudoSchema = new Schema({
     title: String,
-    Body: String,
+    body: String,
     to: [
         {
             type: Schema.Types.ObjectId,
