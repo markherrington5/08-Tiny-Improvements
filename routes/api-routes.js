@@ -30,12 +30,12 @@ module.exports = function (app) {
             body: req.body.body,
             to: req.body.to,
             from: req.body.from
-        }
+        };
 
         Kudo.create(newKudo).then(function (data) {
             res.json(data);
-        }.catch(function (err) {
+        }).catch(function (err) {
             res.json(err)
-        }));
+        });
     });
 };

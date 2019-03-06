@@ -1,5 +1,6 @@
 $(function() {
     const render = function (dataList) {
+        console.log(dataList);
         // empty kudos div
         $('#kudos').empty();
         // append each item to kudos div
@@ -25,14 +26,15 @@ $(function() {
     
     const getUsers = function () {
         $.get('/api/user').then(function (data) {
+            console.log(data);
             $('#kudo-from').empty();
             $('#kudo-to').empty();
             for (let i = 0; i < data.length; i++) {
                 $('#kudo-from').append(
-                    `<option value='${data[i].id}'>${data[i].name}</option>`
+                    `<option value='${data[i]._id}'>${data[i].name}</option>`
                     )
                 $('#kudo-to').append(
-                    `<option value='${data[i].id}'>${data[i].name}</option>`
+                    `<option value='${data[i]._id}'>${data[i].name}</option>`
                     )
             }
         })
@@ -41,14 +43,17 @@ $(function() {
     const postKudo = function (event) {
         event.preventDefault();
         $('#messages').empty();
-    
+
         if($('#kudo-from').val() && $('#kudo-to').val()){
+            console.log($('#kudo-body').val().trim());
             const kudo = {
                 title: $('#kudo-title').val().trim(),
                 body: $('#kudo-body').val().trim(),
                 from: $('#kudo-from').val().trim(),
                 to: $('#kudo-to').val().trim(),
             }
+
+            console.log(kudo);
     
             $.post('api/kudo', kudo).then(function(data) {
                 $('#kudo-title').val('');
