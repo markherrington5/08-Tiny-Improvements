@@ -33,9 +33,9 @@ module.exports = function (app) {
         }
 
         Kudo.create(newKudo).then(function (data) {
-            res.json(data).then(function (err) {
-                res.json(err);
-            });
-        });
+            res.json(data);
+        }.catch(function (err) {
+            res.json(err)
+        }));
     });
 };
